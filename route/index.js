@@ -26,30 +26,13 @@ router.post("/student/validateUser", async (req, res) => {
   });
 });
 
-router.post("/student/newUser", async (req, res) => {
-  const user = new User({
-    id: req.body.class + req.body.roll_no,
-    password: req.body.class + req.body.roll_no,
-    name: req.body.name,
-    roll_no: req.body.roll_no,
-    class: req.body.class,
-    reset: false,
-    active: true,
-  });
-  await user.save();
-  return res.status(200).json({
-    status: "ok",
-    user,
-  });
-});
-
 router.post("/student/newMultipleUsers", async (req, res) => {
   let users = req.body.users;
   let allUsers = [];
   users.forEach((user) => {
     allUsers.push({
       email: user.email,
-      password: user.class + user.roll_no,
+      password: user.roll_no,
       fullname: user.fullname,
       roll_no: user.roll_no,
       class: user.class,
