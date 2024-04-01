@@ -211,7 +211,7 @@ router.post("/exam/newExam", async (req, res) => {
     desc: req.body.desc,
     class: req.body.class,
     startTime: req.body.startTime,
-    endTime: req.body.endTime,
+    duration: req.body.duration,
   });
   await exam.save();
   return res.status(200).json({
