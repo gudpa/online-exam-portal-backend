@@ -94,7 +94,10 @@ router.post("/student/submitExam/:studentId/:examId", async (req, res) => {
   let examId = new mongoose.Types.ObjectId(req.params.examId);
   const userFromDB = await User.findOne({ _id: studentId });
   if (userFromDB) {
-    userFromDB.solutions[examId] = req.body.solution;
+    userFromDB.solutions = {
+      ...userFromDB.solutions,
+      [examId]: req.body.solution,
+    };
     await userFromDB.save();
   }
   return res.status(200).json({
