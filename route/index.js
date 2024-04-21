@@ -36,6 +36,8 @@ router.post("/student/newMultipleUsers", async (req, res) => {
       fullname: user.fullname,
       roll_no: user.roll_no,
       class: user.class,
+      college: user.college,
+      branch: user.branch,
       reset: false,
       active: true,
       solutions: {},

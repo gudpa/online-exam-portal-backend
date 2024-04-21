@@ -17,6 +17,12 @@ const UserSchema = new mongoose.Schema(
     roll_no: {
       type: String,
     },
+    college: {
+      type: String,
+    },
+    branch: {
+      type: String,
+    },
     reset: {
       type: Boolean,
     },
