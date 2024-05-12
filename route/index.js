@@ -47,7 +47,7 @@ router.post("/student/newMultipleUsers", async (req, res) => {
       familyIncome: user.familyIncome,
       nationality: user.nationality,
       addressLine1: user.addressLine1,
-      addressLine2: user.addressLine2,
+      number: user.number,
       state: user.state,
       taluka: user.taluka,
       pincode: user.pincode,
